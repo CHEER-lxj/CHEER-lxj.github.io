@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="css flex布局," />
+  <meta name="keywords" content="javascript this," />
 
 
 
@@ -93,18 +93,18 @@
 
 
 
-<meta name="description" content="前言众所周知，前端技术更新换代的速度，绝不是一般的技术能够媲美的。各种框架的推出，也为我们提供了各种各样的轮子，可以尽情玩耍。但是随着学习的展开，我越来越意识到一个问题：没有基础是走不远的。只会调调API的程序员，终究只能是搬砖的，很难成长为高级工程师。因此，笨人下笨功夫，我打算着手开始一个造轮子系列，把各种常用的轮子都造一遍。 登录框组件结构 外层 div 包裹 form 表单； 表单中放置两个">
-<meta name="keywords" content="css flex布局">
+<meta name="description" content="前言查看各种优秀库源码时，经常能看到call、apply、bind的大量使用，但经常对于这三个方法一脸懵逼。所以今天就来彻底搞懂这三个方法。 学习中经常会遇到一些模糊的知识点，查了忘忘了查。这其实是一个很正常的过程，就像学英语一样。没必要死记硬背，每次遇到，查一遍，多看两眼，不知不觉就记住了。 call、apply、bind的前世今生首先，在使用这三个方法前，我们得知道这三个方法究竟是来自哪里？为">
+<meta name="keywords" content="javascript this">
 <meta property="og:type" content="article">
-<meta property="og:title" content="从登录框组件偷窥flex布局">
-<meta property="og:url" content="http://yoursite.com/2017/06/18/从登录框组件偷窥flex布局/index.html">
+<meta property="og:title" content="call、apply、bind的用法和区别">
+<meta property="og:url" content="http://yoursite.com/2022/02/08/call、apply、bind的用法和区别/index.html">
 <meta property="og:site_name" content="lxj&#39;s home">
-<meta property="og:description" content="前言众所周知，前端技术更新换代的速度，绝不是一般的技术能够媲美的。各种框架的推出，也为我们提供了各种各样的轮子，可以尽情玩耍。但是随着学习的展开，我越来越意识到一个问题：没有基础是走不远的。只会调调API的程序员，终究只能是搬砖的，很难成长为高级工程师。因此，笨人下笨功夫，我打算着手开始一个造轮子系列，把各种常用的轮子都造一遍。 登录框组件结构 外层 div 包裹 form 表单； 表单中放置两个">
+<meta property="og:description" content="前言查看各种优秀库源码时，经常能看到call、apply、bind的大量使用，但经常对于这三个方法一脸懵逼。所以今天就来彻底搞懂这三个方法。 学习中经常会遇到一些模糊的知识点，查了忘忘了查。这其实是一个很正常的过程，就像学英语一样。没必要死记硬背，每次遇到，查一遍，多看两眼，不知不觉就记住了。 call、apply、bind的前世今生首先，在使用这三个方法前，我们得知道这三个方法究竟是来自哪里？为">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2022-02-07T17:48:40.857Z">
+<meta property="og:updated_time" content="2022-02-08T05:00:22.847Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="从登录框组件偷窥flex布局">
-<meta name="twitter:description" content="前言众所周知，前端技术更新换代的速度，绝不是一般的技术能够媲美的。各种框架的推出，也为我们提供了各种各样的轮子，可以尽情玩耍。但是随着学习的展开，我越来越意识到一个问题：没有基础是走不远的。只会调调API的程序员，终究只能是搬砖的，很难成长为高级工程师。因此，笨人下笨功夫，我打算着手开始一个造轮子系列，把各种常用的轮子都造一遍。 登录框组件结构 外层 div 包裹 form 表单； 表单中放置两个">
+<meta name="twitter:title" content="call、apply、bind的用法和区别">
+<meta name="twitter:description" content="前言查看各种优秀库源码时，经常能看到call、apply、bind的大量使用，但经常对于这三个方法一脸懵逼。所以今天就来彻底搞懂这三个方法。 学习中经常会遇到一些模糊的知识点，查了忘忘了查。这其实是一个很正常的过程，就像学英语一样。没必要死记硬背，每次遇到，查一遍，多看两眼，不知不觉就记住了。 call、apply、bind的前世今生首先，在使用这三个方法前，我们得知道这三个方法究竟是来自哪里？为">
 
 
 
@@ -132,13 +132,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/18/从登录框组件偷窥flex布局/"/>
+  <link rel="canonical" href="http://yoursite.com/2022/02/08/call、apply、bind的用法和区别/"/>
 
 
 
 
 
-  <title>从登录框组件偷窥flex布局 | lxj's home</title>
+  <title>call、apply、bind的用法和区别 | lxj's home</title>
   
 
 
@@ -258,7 +258,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/18/从登录框组件偷窥flex布局/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2022/02/08/call、apply、bind的用法和区别/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lxj">
@@ -275,7 +275,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">从登录框组件偷窥flex布局</h1>
+          <h1 class="post-title" itemprop="name headline">call、apply、bind的用法和区别</h1>
         
 
         <div class="post-meta">
@@ -287,8 +287,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-18T22:50:08+08:00">
-                2017-06-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2022-02-08T01:29:34+08:00">
+                2022-02-08
               </time>
             
 
@@ -322,46 +322,30 @@
       
 
       
-        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>众所周知，前端技术更新换代的速度，绝不是一般的技术能够媲美的。各种框架的推出，也为我们提供了各种各样的轮子，可以尽情玩耍。但是随着学习的展开，我越来越意识到一个问题：没有基础是走不远的。只会调调API的程序员，终究只能是搬砖的，很难成长为高级工程师。因此，笨人下笨功夫，我打算着手开始一个造轮子系列，把各种常用的轮子都造一遍。</p>
-<h1 id="登录框组件"><a href="#登录框组件" class="headerlink" title="登录框组件"></a>登录框组件</h1><h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><ul>
-<li>外层 div 包裹 form 表单；</li>
-<li>表单中放置两个 input 输入框；</li>
-<li>i 标签用于引入图标；</li>
-<li>a 标签链接更改密码或忘记密码；</li>
-<li>button 按钮提交表单</li>
-</ul>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>实验在codepen中完成。纯css打造的登录框组件。暂未实现交互效果。<a href="https://codepen.io/LXJ9766/pen/zzNJqp" target="_blank" rel="external">戳我看源码</a></p>
-<h2 id="知识点："><a href="#知识点：" class="headerlink" title="知识点："></a>知识点：</h2><ol>
-<li>外层div <a href="http://div.io/topic/1155" target="_blank" rel="external">垂直水平居中</a>；</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transition" target="_blank" rel="external">transition</a> 和 <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank" rel="external">transform</a> 实现动画效果；</li>
-<li><a href="http://sass.bootcss.com/docs/sass-reference/" target="_blank" rel="external">scss</a> 语法；</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="external">盒模型</a>；</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Getting_started/Selectors" target="_blank" rel="external">css选择器</a>知识；</li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" target="_blank" rel="external">flex</a>、绝对定位等布局知识。</li>
-</ol>
-<h1 id="flex布局"><a href="#flex布局" class="headerlink" title="flex布局"></a>flex布局</h1><p>我是参考阮一峰老师关于<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">弹性布局</a>讲解的一篇文章来学习的。这里单独拎出来写一下，是为了加深映像。</p>
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>查看各种优秀库源码时，经常能看到call、apply、bind的大量使用，但经常对于这三个方法一脸懵逼。所以今天就来彻底搞懂这三个方法。</p>
+<p>学习中经常会遇到一些模糊的知识点，查了忘忘了查。这其实是一个很正常的过程，就像学英语一样。没必要死记硬背，每次遇到，查一遍，多看两眼，不知不觉就记住了。</p>
+<h1 id="call、apply、bind的前世今生"><a href="#call、apply、bind的前世今生" class="headerlink" title="call、apply、bind的前世今生"></a>call、apply、bind的前世今生</h1><p>首先，在使用这三个方法前，我们得知道这三个方法究竟是来自哪里？为什么可以使用到这三个方法？</p>
+<p>call、apply、bind这三个方法其实都是继承自Function.prototype中的，属于实例方法。</p>
+<p>在控制台中输入下面这段代码，就会发现，这三种方法都是继承自Function.prototype的。自然，普通的对象，函数，数组都继承了Function.prototype对象中的三个方法，所以这三个方法都可以在对象、数组、函数中使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Function.prototype.call</div><div class="line">Function.prototype.apply</div><div class="line">Function.prototype.bind</div></pre></td></tr></table></figure>
+<h1 id="区别与作用"><a href="#区别与作用" class="headerlink" title="区别与作用"></a>区别与作用</h1><p><strong>这三个方法的作用都是用于改变函数内部的this指向。区别只是在于调用方式和传参的不同。</strong></p>
 <ul>
-<li><p>将最外层包裹元素指定为弹性布局</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  display: -webkit-flex; /* Safari */</div><div class="line">  display: flex;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>这三个方法，第一个参数都是指定函数内部中this的指向（即函数执行时所在的作用域），然后根据指定的作用域，调用该函数。</p>
 </li>
-<li><p>flex-direction  指定主轴的排列方向</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  flex-direction: row | row-reverse | column | column-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>这三个方法都可以在函数调用时传递参数，call、bind方法需要直接将参数传入，而apply方法需要以数组的形式将参数传入。</p>
 </li>
-<li><p>flex-wrap 指定是否换行</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box&#123;</div><div class="line">  flex-wrap: nowrap | wrap | wrap-reverse;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>flex-flow<br>flex-direction 属性与 flex-wrap 的简写  默认为： row nowrap</p>
-</li>
-<li><p>justify-content 属性定义了在主轴上的对齐方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  justify-content: flex-start | flex-end | center | space-between | space-around;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>align-items 属性定义了在交叉轴上的对齐方式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-items: flex-start | flex-end | center | baseline | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>align-content 多跟轴线的对齐方式 若只有一根轴线 不起作用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">.box &#123;</div><div class="line">  align-content: flex-start | flex-end | center | space-between | space-around | stretch;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li><p>call、apply方法是在调用之后立即执行函数，而bind方法没有立即执行，bind返回的是函数，需要用（）进行调用。</p>
 </li>
 </ul>
+<p>说完了结论，我们可以通过下面的例子来更直观的看下他们的用法和区别。</p>
+<p>首先，我们需要知道javascript中的一个重要特性：</p>
+<p><strong>- 在全局环境中调用一个函数，函数内部的this指向的是全局变量window。</strong></p>
+<p><strong>- 通过一个对象来调用其内部的一个方法，该方法的执行上下文中的this指向对象本身。</strong></p>
+<p><em>这个特性需要牢记，因为在使用时会经常引发错误。</em></p>
+<p>在控制台中输入下面的代码可以进行验证。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function fun() &#123;</div><div class="line">    console.log(this)</div><div class="line">&#125;</div><div class="line">fun() // window对象</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name: &apos;小明&apos;,</div><div class="line">    age: 18,</div><div class="line">    myFun: function（） &#123;</div><div class="line">        console.log(this)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.myFun() // obj对象</div></pre></td></tr></table></figure>
+<p>好了，知道了以上结论，我们来正式看看call、apply、bind这三个函数的使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">var name = &apos;小明&apos;</div><div class="line">var age = 18</div><div class="line">var obj = &#123;</div><div class="line">    name: &apos;小张&apos;,</div><div class="line">    objAge: this.objAge,</div><div class="line">    myFun: function(from, to) &#123;</div><div class="line">        console.log(this.name + &apos;年龄&apos; + this.age, &apos;来自&apos; + from + &apos;去往&apos; + to)</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var otherObj = &#123;</div><div class="line">    name: &apos;小李&apos;,</div><div class="line">    age: 20,</div><div class="line">    from: &apos;北京&apos;,</div><div class="line">    to: &apos;沈阳&apos;</div><div class="line">&#125;</div><div class="line"></div><div class="line">obj.myFun.call(otherObj,&apos;杭州&apos;,&apos;上海&apos;) // 小李年龄20 来自杭州去往上海</div><div class="line">obj.myFun.apply(otherObj,[&apos;杭州&apos;,&apos;上海&apos;]) // 小李年龄20 来自杭州去往上海</div><div class="line">obj.myFun.bind(otherObj,&apos;杭州&apos;,&apos;上海&apos;)() // 小李年龄20 来自杭州去往上海</div></pre></td></tr></table></figure>
 
       
     </div>
@@ -391,7 +375,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/css-flex布局/" rel="tag"># css flex布局</a>
+            <a href="/tags/javascript-this/" rel="tag"># javascript this</a>
           
         </div>
       
@@ -404,15 +388,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2022/02/01/Javascript变量提升/" rel="next" title="Javascript变量提升">
+                <i class="fa fa-chevron-left"></i> Javascript变量提升
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/09/03/hello-world/" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -532,7 +516,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#登录框组件"><span class="nav-number">2.</span> <span class="nav-text">登录框组件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#结构"><span class="nav-number">2.1.</span> <span class="nav-text">结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识点："><span class="nav-number">2.3.</span> <span class="nav-text">知识点：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#flex布局"><span class="nav-number">3.</span> <span class="nav-text">flex布局</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#call、apply、bind的前世今生"><span class="nav-number">2.</span> <span class="nav-text">call、apply、bind的前世今生</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#区别与作用"><span class="nav-number">3.</span> <span class="nav-text">区别与作用</span></a></li></ol></div>
             
 
           </div>
